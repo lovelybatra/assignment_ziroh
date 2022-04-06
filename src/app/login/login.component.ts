@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
     return this.loginform.controls;
   }
   ngOnInit(): void {
+    var isAuthenticated = localStorage.getItem('loggedin');
+        if (isAuthenticated) {
+          this.router.navigate(['/dashboard'])
+        }
   }
 
   clk_login()
